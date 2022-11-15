@@ -1,4 +1,4 @@
-if name == __main__:
+if __name__ == "__main__":
     from google.colab import drive
     drive.mount('/content/drive')
 
