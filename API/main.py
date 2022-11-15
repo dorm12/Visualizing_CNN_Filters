@@ -50,7 +50,7 @@ class Visualizer:
         break
     
 
-  def set_target_layer(conv_layer_name):
+  def set_target_layer(self, conv_layer_name):
       layer = self.__model.get_layer(name=conv_layer_name)
       self.__target_conv_layer = layer
       self.__feature_extractor = keras.Model(inputs=model.inputs,
@@ -111,7 +111,7 @@ class Visualizer:
     original_evaluation = self.__model.evaluate(data, labels)
     self.__redundant = []
 
-    def set_i_filter_weigths_to_zero(w,b,i):
+    def set_i_filter_weigths_to_zero(self, w,b,i):
       # creates w and b with zeros for the i'th filter
       # and leave the other filters intact
       # maybe worth breaking the list comprehension for readability purpose
