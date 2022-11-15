@@ -53,7 +53,7 @@ class Visualizer:
   def set_target_layer(self, conv_layer_name):
       layer = self.__model.get_layer(name=conv_layer_name)
       self.__target_conv_layer = layer
-      self.__feature_extractor = keras.Model(inputs=model.inputs,
+      self.__feature_extractor = keras.Model(inputs=self.__model.inputs,
                                            outputs=layer.output)
 
 
