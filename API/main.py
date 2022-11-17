@@ -154,8 +154,8 @@ class Visualizer:
   
   def feature_visualization(self, filter_index,
                             img_width=180, img_height=180,
-                            color_channels=3
-                            initializer=None, return_deprocessed=True,
+                            color_channels=3,
+                            initializer=None,
                             layer_name=None, iterations=30,
                             return_deprocessed=True):
     # does feature visualiztion
