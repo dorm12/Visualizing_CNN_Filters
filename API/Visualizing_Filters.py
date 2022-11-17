@@ -43,8 +43,8 @@ def visualize_filter(filter_index, feature_extractor,
     else:
         img = initialize_image(img_width, img_height, color_channels, custom)
         
-    if img.shape[:-1]!=(img_height, img_width):
-        img = cv2.resize(img, (img_height, img_width))
+    # if img.shape[:-1]!=(img_height, img_width):
+    #     img = cv2.resize(img, (img_height, img_width))
         
     if img.max()>1:
         img = img/img.max()
