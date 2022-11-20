@@ -64,6 +64,8 @@ class Visualizer:
           feature_extractor = self.create_feature_extractor(layer_name)
       else:
           feature_extractor = self.__feature_extractor
+      if len(data.shape)==3:
+          data = data[None, :]
       acts = feature_extractor(data).numpy().mean(axis=(1,2))
       stds = acts.std(axis=0)
       return acts, stds, stds.argsort()
