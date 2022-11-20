@@ -38,7 +38,7 @@ def visualize_filter(filter_index, feature_extractor,
                      custom=True, initializer=None, 
                      iterations=30, learning_rate = 10.0,
                      return_deprocessed=True):
-    if initializer:
+    if tf.is_tensor(initializer) or type(initializer)==np.ndarray:
         if len(initializer.shape)==3:
             initializer = initializer[None,:]
         img = tf.Variable(initializer)
