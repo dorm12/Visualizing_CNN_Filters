@@ -49,8 +49,8 @@ def visualize_filter(filter_index, feature_extractor,
     # if img.max()>1:
     #     img = img/img.max()
     #
-    # for iteration in range(iterations):
-    #     loss, img = gradient_ascent_step(img, filter_index, learning_rate, feature_extractor)
+    for iteration in range(iterations):
+        loss, img = gradient_ascent_step(img, filter_index, learning_rate, feature_extractor)
 
     if return_deprocessed:
         # Decode the resulting input image
