@@ -39,7 +39,9 @@ def visualize_filter(filter_index, feature_extractor,
                      iterations=30, learning_rate = 10.0,
                      return_deprocessed=True):
     if initializer:
-        img = tf.Variable(initializer(img_width, img_height, color_channels))
+        if len(initializer.shape)==3:
+            initializer = initializer[None,:]
+        img = tf.Variable(initializer)
     else:
         img = initialize_image(img_width, img_height, color_channels, custom)
         
