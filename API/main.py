@@ -158,7 +158,7 @@ class Visualizer:
                             img_width=180, img_height=180,
                             color_channels=3,
                             initializer=None,
-                            layer_name=None, iterations=30,
+                            layer_name=None, iterations=200,
                             return_deprocessed=True):
     # does feature visualiztion
     # uses another file
