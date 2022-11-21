@@ -3,7 +3,7 @@ import numpy as np
 import cv2
 
 
-init_img = np.load('Visualizing_CNN_Filters/init_img.npy')[None,:]
+init_img = cv2.resize(np.load('Visualizing_CNN_Filters/init_img.npy'), (224,224))[None,:]
 
 def compute_loss(input_image, filter_index, feature_extractor):
     activation = feature_extractor(input_image)
