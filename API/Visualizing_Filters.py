@@ -2,6 +2,9 @@ import tensorflow as tf
 import numpy as np
 import cv2
 
+
+init_img = np.load('Visualizing_CNN_Filters/init_img.npy')
+
 def compute_loss(input_image, filter_index, feature_extractor):
     activation = feature_extractor(input_image)
     # We avoid border artifacts by only involving non-border pixels in the loss.
@@ -42,8 +45,10 @@ def visualize_filter(filter_index, feature_extractor,
         if len(initializer.shape)==3:
             initializer = initializer[None,:]
         img = tf.Variable(initializer)
-    else:
+    elif initializer=='random':
         img = initialize_image(img_width, img_height, color_channels, custom)
+    else:
+        img = init_img
         
     # if img.shape[:-1]!=(img_height, img_width):
     #     img = cv2.resize(img, (img_height, img_width))
