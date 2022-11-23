@@ -1,7 +1,9 @@
 ! git clone https://github.com/dorm12/Visualizing_CNN_Filters.git
+
 from Visualizing_CNN_Filters.API.main import Visualizer
 
 vslr = Visualizer.Visualizer(model, conv_layer_name='block3_conv3')
+
 loss, img = vslr.feature_visualization(filter_index=3)
 
 The above code is the suggested way to use the tool.
